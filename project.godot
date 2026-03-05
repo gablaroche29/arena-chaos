@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="Arena Chaos"
+run/main_scene="uid://cueuaspswtl3w"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ServerListener="*res://network/server_listener.gd"
