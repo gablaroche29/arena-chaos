@@ -1,6 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://bui6c5b26yade"]
+[gd_scene load_steps=46 format=3 uid="uid://bui6c5b26yade"]
 
 [ext_resource type="Texture2D" uid="uid://cfcterwlehvan" path="res://assets/game/characters/player_spritesheet.png" id="1_7uws0"]
+[ext_resource type="Script" uid="uid://boia2luwdsb55" path="res://scenes/characters/player/player.gd" id="1_hss88"]
+[ext_resource type="Script" uid="uid://bnxf17lvbmjek" path="res://scripts/state_machine/node_state_machine.gd" id="2_t61fv"]
+[ext_resource type="Script" uid="uid://82fovem30a0l" path="res://scenes/characters/player/idle_state.gd" id="3_686vu"]
+[ext_resource type="Script" uid="uid://cg8whjjvjnt41" path="res://scenes/characters/player/walk_state.gd" id="5_qd3e3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t61fv"]
 atlas = ExtResource("1_7uws0")
@@ -301,11 +305,29 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hss88"]
+
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_hss88")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bcx1r")
-animation = &"hit"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hss88")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("2_t61fv")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("3_686vu")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("5_qd3e3")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
