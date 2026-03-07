@@ -8,5 +8,5 @@ func _process(_delta: float) -> void:
 func is_moving() -> bool:
 	return direction != Vector2.ZERO
 
-func is_using_tool() -> bool:
-	return Input.is_action_just_pressed("hit")
+func is_shooting() -> bool:
+	return Input.is_action_just_pressed("shoot")

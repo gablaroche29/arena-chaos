@@ -21,6 +21,3 @@ func _process(_delta):
 		while websocket.get_available_packet_count():
 			var message = websocket.get_packet().get_string_from_utf8()
 			print("[WS EVENT]: ", message)
-
-	elif state == WebSocketPeer.STATE_CLOSED:
-		print("WebSocket closed")
