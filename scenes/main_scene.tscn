@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://cnx2lpql436gu" path="res://tilesets/game_tileset.tres" id="1_w2twt"]
 [ext_resource type="PackedScene" uid="uid://bui6c5b26yade" path="res://scenes/characters/player/player.tscn" id="2_pw63i"]
-[ext_resource type="PackedScene" uid="uid://by4exggi8mrte" path="res://scenes/characters/enemies/enemy.tscn" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://x1hikkr7c80t" path="res://scenes/props/enemy_spawner.tscn" id="3_7ykc4"]
 
 [node name="World" type="Node2D"]
 
@@ -19,5 +19,5 @@ tile_set = ExtResource("1_w2twt")
 [node name="Player" parent="." instance=ExtResource("2_pw63i")]
 position = Vector2(235, 135)
 
-[node name="Enemy" parent="." instance=ExtResource("3_7ykc4")]
-position = Vector2(307, 171)
+[node name="EnemySpawner" parent="." instance=ExtResource("3_7ykc4")]
+position = Vector2(152, 84)

@@ -46,6 +46,6 @@ script = ExtResource("1_stcj6")
 sprite_frames = SubResource("SpriteFrames_0ue4f")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.231536
+frame_progress = 0.561998
 
 [node name="Muzzle" type="Marker2D" parent="."]
