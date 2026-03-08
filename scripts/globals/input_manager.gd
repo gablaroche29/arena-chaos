@@ -9,4 +9,4 @@ func is_moving() -> bool:
 	return direction != Vector2.ZERO
 
 func is_shooting() -> bool:
-	return Input.is_action_just_pressed("shoot")
+	return Input.is_action_pressed("shoot")
