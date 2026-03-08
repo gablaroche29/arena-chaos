@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx3kto6g22jgk"
-path="res://.godot/imported/Reticle2.png-cf87036aadc98996d25b887052a53ef4.ctex"
+uid="uid://vf64kmql6fva"
+path="res://.godot/imported/warrior.png-ec2be53dbfd553a0d94245b4896bd5de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game/Reticle2.png"
-dest_files=["res://.godot/imported/Reticle2.png-cf87036aadc98996d25b887052a53ef4.ctex"]
+source_file="res://assets/game/characters/enemies/warrior.png"
+dest_files=["res://.godot/imported/warrior.png-ec2be53dbfd553a0d94245b4896bd5de.ctex"]
 
 [params]
 
