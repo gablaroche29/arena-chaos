@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfwbr6suugf0s"]
+
+[ext_resource type="Texture2D" uid="uid://wl7wdo7uwdee" path="res://assets/game/objects/gun.png" id="1_knwv5"]
+[ext_resource type="Script" uid="uid://dj1i0w0r82qke" path="res://scenes/props/gun/gun.gd" id="1_vfssx"]
+
+[node name="Gun" type="Node2D"]
+script = ExtResource("1_vfssx")
+
+[node name="RotationOffset" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RotationOffset"]
+texture = ExtResource("1_knwv5")
+
+[node name="shadow" type="Sprite2D" parent="RotationOffset/Sprite2D"]
+modulate = Color(0, 0, 0, 0.215686)
+z_index = -1
+texture = ExtResource("1_knwv5")
+
+[node name="shoot_pos" type="Marker2D" parent="RotationOffset/Sprite2D"]
+position = Vector2(6, -1)
+
+[node name="ShootTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
