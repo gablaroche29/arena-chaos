@@ -13,7 +13,6 @@ func _on_vote_update(event):
 
 func _on_event_triggered(event):
 	flash()
-	shake_camera()
 	event_feed.show_event(event)
 	vote_panel.remove_vote(event.type)
 
@@ -29,14 +28,3 @@ func flash():
 
 	await tween.finished
 	flash.queue_free()
-	
-func shake_camera():
-	var camera = get_viewport().get_camera_2d()
-	if camera == null:
-		return
-
-	for i in 6:
-		camera.offset = Vector2(randf_range(-6,6), randf_range(-6,6))
-		await get_tree().create_timer(0.03).timeout
-
-	camera.offset = Vector2.ZERO
