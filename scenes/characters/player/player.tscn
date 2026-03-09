@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://bui6c5b26yade"]
+[gd_scene load_steps=34 format=3 uid="uid://bui6c5b26yade"]
 
 [ext_resource type="Script" uid="uid://boia2luwdsb55" path="res://scenes/characters/player/player.gd" id="1_hss88"]
 [ext_resource type="PackedScene" uid="uid://dfwbr6suugf0s" path="res://scenes/props/gun/gun.tscn" id="2_686vu"]
 [ext_resource type="Texture2D" uid="uid://fyjrsyqpgkb1" path="res://assets/game/characters/player/player.png" id="3_686vu"]
 [ext_resource type="Script" uid="uid://bcgdw6s5akjgo" path="res://scenes/characters/player/player_animation_tree.gd" id="4_hss88"]
+[ext_resource type="Script" uid="uid://c8diplwnk38nf" path="res://scripts/components/health.gd" id="5_qd3e3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hss88"]
 
@@ -289,7 +290,7 @@ shape = SubResource("CircleShape2D_hss88")
 texture = ExtResource("3_686vu")
 hframes = 13
 vframes = 13
-frame = 9
+frame = 6
 region_enabled = true
 region_rect = Rect2(-13, 0, 832, 845)
 
@@ -307,3 +308,8 @@ parameters/PlayerStates/Run/blend_position = Vector2(-0.366109, 0.703846)
 
 [node name="PlayerAnimation" type="Node2D" parent="."]
 script = ExtResource("4_hss88")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("5_qd3e3")
+max_health = 5
+metadata/_custom_type_script = "uid://c8diplwnk38nf"

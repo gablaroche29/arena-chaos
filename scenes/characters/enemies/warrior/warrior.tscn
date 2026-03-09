@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://by4exggi8mrte"]
+[gd_scene load_steps=30 format=3 uid="uid://by4exggi8mrte"]
 
 [ext_resource type="Script" uid="uid://uvm7bmcoev5t" path="res://scenes/characters/enemies/warrior/warrior.gd" id="1_blu3w"]
 [ext_resource type="Texture2D" uid="uid://vf64kmql6fva" path="res://assets/game/characters/enemies/warrior.png" id="2_20xeb"]
@@ -6,7 +6,11 @@
 [ext_resource type="Script" uid="uid://cyyroiyh5ih70" path="res://scenes/characters/enemies/warrior/warrior_animation_tree.gd" id="4_x2pkb"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://dxaic7epkcp3b" path="res://scenes/characters/enemies/warrior/animations/warrior_anim_states.tres" id="5_34xhb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34xhb"]
+size = Vector2(12.5, 10)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58vw2"]
+size = Vector2(8, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwhyh"]
 size = Vector2(128, 128)
@@ -29,6 +33,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_34xhb"]
@@ -152,6 +170,47 @@ tracks/0/keys = {
 "update": 1,
 "values": [112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHitBox/HitBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.50397),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 26)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/AttackHitBox/HitBox:shape:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.50397),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(31, 10)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_has_attacked"
+}, {
+"args": [],
+"method": &"_has_finished_attacking"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ky1xa"]
 resource_name = "smash_side"
@@ -168,6 +227,47 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHitBox/HitBox:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.505783),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(12.5, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/AttackHitBox/HitBox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.505783),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17.75, 12)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_has_attacked"
+}, {
+"args": [],
+"method": &"_has_finished_attacking"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_lqwhd"]
@@ -186,6 +286,47 @@ tracks/0/keys = {
 "update": 1,
 "values": [128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHitBox/HitBox:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.503063),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(31, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/AttackHitBox/HitBox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.503063),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, -10)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_has_attacked"
+}, {
+"args": [],
+"method": &"_has_finished_attacking"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_34xhb"]
 _data = {
@@ -202,12 +343,50 @@ _data = {
 &"smash_up": SubResource("Animation_lqwhd")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eud7m"]
+animation = &"smash_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6wj6r"]
+animation = &"smash_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5qiye"]
+animation = &"smash_side"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dxhgk"]
+animation = &"smash_side"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ky1xa"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_eud7m")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_6wj6r")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_5qiye")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_dxhgk")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_34xhb"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_34xhb"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_eud7m"]
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_eud7m"]
-graph_offset = Vector2(-413, 14)
-nodes/WarriorStates/node = ExtResource("5_34xhb")
-nodes/WarriorStates/position = Vector2(10, 130)
-nodes/output/position = Vector2(470, 140)
-node_connections = [&"output", 0, &"WarriorStates"]
+graph_offset = Vector2(-88.8538, 35.1261)
+nodes/AttackBlend/node = SubResource("AnimationNodeBlendSpace2D_ky1xa")
+nodes/AttackBlend/position = Vector2(80, 360)
+nodes/AttackShot/node = SubResource("AnimationNodeOneShot_34xhb")
+nodes/AttackShot/position = Vector2(450, 290)
+nodes/DeathAnimation/node = SubResource("AnimationNodeAnimation_34xhb")
+nodes/DeathAnimation/position = Vector2(660, 420)
+nodes/DeathShot/node = SubResource("AnimationNodeOneShot_eud7m")
+nodes/DeathShot/position = Vector2(940, 250)
+nodes/LocomotionStates/node = ExtResource("5_34xhb")
+nodes/LocomotionStates/position = Vector2(10, 130)
+nodes/output/position = Vector2(1140, 130)
+node_connections = [&"AttackShot", 0, &"LocomotionStates", &"AttackShot", 1, &"AttackBlend", &"DeathShot", 0, &"AttackShot", &"DeathShot", 1, &"DeathAnimation", &"output", 0, &"DeathShot"]
 
 [node name="Warrior" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
@@ -218,16 +397,22 @@ script = ExtResource("1_blu3w")
 texture = ExtResource("2_20xeb")
 hframes = 16
 vframes = 10
-frame = 16
+frame = 106
 region_enabled = true
 region_rect = Rect2(-6, 0, 992, 690)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+[node name="AttackHitBox" type="Area2D" parent="Sprite2D"]
+
+[node name="HitBox" type="CollisionShape2D" parent="Sprite2D/AttackHitBox"]
+position = Vector2(17.75, 12)
+shape = SubResource("RectangleShape2D_34xhb")
+debug_color = Color(0.944332, 0.122216, 0.507724, 0.42)
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+position = Vector2(1, 6.5)
 shape = SubResource("RectangleShape2D_58vw2")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2(0.2, 0.2)
@@ -251,9 +436,16 @@ script = ExtResource("4_x2pkb")
 tree_root = SubResource("AnimationNodeBlendTree_eud7m")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/WarriorStates/Idle/blend_position = Vector2(0, 0)
-parameters/WarriorStates/Run/blend_position = Vector2(0, 0)
-parameters/WarriorStates/Smash/blend_position = Vector2(0, 0)
+parameters/AttackBlend/blend_position = Vector2(0, 0)
+parameters/AttackShot/active = false
+parameters/AttackShot/internal_active = false
+parameters/AttackShot/request = 0
+parameters/DeathShot/active = false
+parameters/DeathShot/internal_active = false
+parameters/DeathShot/request = 0
+parameters/LocomotionStates/Idle/blend_position = Vector2(0, 0)
+parameters/LocomotionStates/Run/blend_position = Vector2(0, 0)
+parameters/LocomotionStates/Smash/blend_position = Vector2(0, 0)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,34 +1,45 @@
 class_name Warrior
 extends CharacterBody2D
 
-@onready var player = get_tree().get_first_node_in_group("player")
 @onready var health: Health = $Health
+
+signal has_attacked()
+signal died()
 
 var speed: int = 50
 var is_attacking: bool = false
+var player: Player
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
 	health.died.connect(_on_died)
 
 func _physics_process(delta: float) -> void:
-	if is_attacking: return
+	if is_attacking or health.dead:
+		velocity = Vector2.ZERO
+		return
 	
 	var direction = (player.global_position - global_position).normalized()
-	velocity = lerp(velocity, direction * speed, 8.5 * delta)
+	velocity = velocity.move_toward(direction * speed, speed * delta * 10)
 	move_and_slide()
 	
-	if direction.x > 0:
-		$Sprite2D.flip_h = false
-	elif direction.x < 0:
-		$Sprite2D.flip_h = true
+	$Sprite2D.scale.x = sign(direction.x)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == player:
+	if body == player and not is_attacking and not health.dead:
 		is_attacking = true
+		has_attacked.emit()
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body == player:
-		is_attacking = false
+func _has_attacked() -> void:
+	var targets = $Sprite2D/AttackHitBox.get_overlapping_bodies()
+	for target in targets:
+		if target == player:
+			target.get_node_or_null("Health").damage(1)
+
+func _has_finished_attacking():
+	is_attacking = false
 
 func _on_died():
-	queue_free()
+	is_attacking = false
+	velocity = Vector2.ZERO
+	died.emit()

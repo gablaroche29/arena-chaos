@@ -6,13 +6,14 @@ signal died
 
 @export var max_health: int = 10
 var current_health: int
+var dead: bool = false
 
 func _ready():
 	current_health = max_health
 	emit_signal("health_changed", current_health, max_health)
 
 func damage(amount: int):
-	if amount <= 0:
+	if amount <= 0 || dead:
 		return
 		
 	current_health -= amount
@@ -33,4 +34,5 @@ func heal(amount: int):
 	emit_signal("health_changed", current_health, max_health)
 
 func die():
+	dead = true
 	emit_signal("died")
