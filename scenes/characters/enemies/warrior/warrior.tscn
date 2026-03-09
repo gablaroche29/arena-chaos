@@ -205,7 +205,7 @@ _data = {
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_eud7m"]
 graph_offset = Vector2(-413, 14)
 nodes/WarriorStates/node = ExtResource("5_34xhb")
-nodes/WarriorStates/position = Vector2(-20, 130)
+nodes/WarriorStates/position = Vector2(10, 130)
 nodes/output/position = Vector2(470, 140)
 node_connections = [&"output", 0, &"WarriorStates"]
 
@@ -218,7 +218,7 @@ script = ExtResource("1_blu3w")
 texture = ExtResource("2_20xeb")
 hframes = 16
 vframes = 10
-frame = 17
+frame = 16
 region_enabled = true
 region_rect = Rect2(-6, 0, 992, 690)
 
@@ -243,10 +243,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_34xhb")
 }
 
-[node name="WarriorAnimation" type="Node2D" parent="." node_paths=PackedStringArray("animation_tree")]
+[node name="WarriorAnimation" type="Node2D" parent="."]
 visible = false
 script = ExtResource("4_x2pkb")
-animation_tree = NodePath("../AnimationTree")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_eud7m")
