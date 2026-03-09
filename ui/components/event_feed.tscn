@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmd0ydxi27hdk"]
+
+[ext_resource type="Script" uid="uid://c1qq0qqafqqq1" path="res://ui/components/event_feed.gd" id="1_cgj4j"]
+[ext_resource type="PackedScene" uid="uid://c7fugmg88cq3i" path="res://ui/components/event_label.tscn" id="2_txb1r"]
+
+[node name="EventFeed" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cgj4j")
+event_label_scene = ExtResource("2_txb1r")
+
+[node name="EventContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

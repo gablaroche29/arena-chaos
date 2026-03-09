@@ -15,6 +15,7 @@ func handle_raw_message(message: String):
 		print("Unknown message format:", data)
 		return
 	
+	print(data)
 	match data.type:
 		"INFO":
 			_handle_info(data)

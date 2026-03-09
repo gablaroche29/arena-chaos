@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfuh27pnwyxtr"]
 
 [ext_resource type="Texture2D" uid="uid://d1fmj5arkl6xu" path="res://assets/game/objects/reticle.png" id="1_nbm88"]
-[ext_resource type="Script" uid="uid://cwr042hal6wso" path="res://scenes/props/cursor/cursor.gd" id="2_q7mry"]
+[ext_resource type="Script" uid="uid://cwr042hal6wso" path="res://ui/components/cursor/cursor.gd" id="2_q7mry"]
 
 [node name="Cursor" type="Sprite2D"]
 z_index = 4096
