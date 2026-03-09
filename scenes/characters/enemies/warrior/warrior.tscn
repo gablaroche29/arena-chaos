@@ -218,7 +218,7 @@ script = ExtResource("1_blu3w")
 texture = ExtResource("2_20xeb")
 hframes = 16
 vframes = 10
-frame = 20
+frame = 17
 region_enabled = true
 region_rect = Rect2(-6, 0, 992, 690)
 
