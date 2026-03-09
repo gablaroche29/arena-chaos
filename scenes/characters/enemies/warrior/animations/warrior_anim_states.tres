@@ -100,4 +100,4 @@ states/Run/position = Vector2(424, 23)
 states/Smash/node = SubResource("AnimationNodeBlendSpace2D_phy0m")
 states/Smash/position = Vector2(649, 117.5)
 transitions = ["Start", "Run", SubResource("AnimationNodeStateMachineTransition_x2pkb"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_34xhb"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_eud7m"), "Run", "Smash", SubResource("AnimationNodeStateMachineTransition_6wj6r"), "Smash", "Idle", SubResource("AnimationNodeStateMachineTransition_5qiye"), "Idle", "Smash", SubResource("AnimationNodeStateMachineTransition_dxhgk")]
-graph_offset = Vector2(-238, 2)
+graph_offset = Vector2(-166, -138)

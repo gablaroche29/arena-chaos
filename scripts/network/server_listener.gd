@@ -1,7 +1,7 @@
 extends Node
 
 var websocket := WebSocketPeer.new()
-var url := "ws://localhost:3000"
+var url := "wss://largon.space"
 
 func _ready():
 	print("Connecting to WebSocket server:", url)
