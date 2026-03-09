@@ -7,6 +7,7 @@ signal has_attacked()
 signal died()
 
 var speed: int = 50
+var stop_distance: float = 20.0
 var is_attacking: bool = false
 var player: Player
 
@@ -19,11 +20,15 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		return
 	
-	var direction = (player.global_position - global_position).normalized()
-	velocity = velocity.move_toward(direction * speed, speed * delta * 10)
+	var to_player = player.global_position - global_position
+	var distance = to_player.length()
+	if distance > stop_distance:
+		var direction = to_player.normalized()
+		velocity = velocity.move_toward(direction * speed, speed * delta * 10)
+		$Sprite2D.scale.x = sign(direction.x)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, speed * delta * 10)
 	move_and_slide()
-	
-	$Sprite2D.scale.x = sign(direction.x)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == player and not is_attacking and not health.dead:

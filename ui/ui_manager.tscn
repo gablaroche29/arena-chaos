@@ -6,10 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://bfuh27pnwyxtr" path="res://ui/components/cursor/cursor.tscn" id="4_kc3lm"]
 
 [node name="UiManager" type="CanvasLayer"]
+layer = 128
 script = ExtResource("1_5tvr0")
 
 [node name="EventFeed" parent="." instance=ExtResource("2_i8kce")]
 
 [node name="VotePanel" parent="." instance=ExtResource("3_kc3lm")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 1
 
 [node name="Cursor" parent="." instance=ExtResource("4_kc3lm")]
