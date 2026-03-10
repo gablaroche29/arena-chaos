@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6lcbvgogb58t"]
+
+[ext_resource type="Script" uid="uid://b32vtejex3ryu" path="res://ui/components/hud/health_hud.gd" id="1_oeo2i"]
+[ext_resource type="FontFile" uid="uid://c2j65ihn71vgj" path="res://assets/fonts/VT323/VT323-Regular.ttf" id="2_exhgi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8t3d"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oeo2i"]
+bg_color = Color(0.937255, 0.278431, 0.435294, 1)
+
+[node name="HealthHud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+script = ExtResource("1_oeo2i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_c8t3d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oeo2i")
+show_percentage = false
+
+[node name="HealthText" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_exhgi")
+theme_override_font_sizes/font_size = 16
+uppercase = true

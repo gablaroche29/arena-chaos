@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccjmx62v4qevh"]
+
+[ext_resource type="Script" uid="uid://bonc6m6db1p4k" path="res://ui/components/hud/chaos_hud.gd" id="1_cy1v5"]
+[ext_resource type="FontFile" uid="uid://c2j65ihn71vgj" path="res://assets/fonts/VT323/VT323-Regular.ttf" id="2_prdp4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fed1s"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbxqs"]
+bg_color = Color(0.937255, 0.278431, 0.435294, 1)
+
+[node name="ChaosHud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+script = ExtResource("1_cy1v5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -9.0
+offset_right = 29.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChaosLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_prdp4")
+theme_override_font_sizes/font_size = 12
+text = "CHAOS"
+uppercase = true
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_fed1s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tbxqs")
+show_percentage = false

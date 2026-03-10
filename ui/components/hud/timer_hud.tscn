@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc76quu1ni1ju"]
+
+[ext_resource type="Script" uid="uid://d2knqpg44a2fn" path="res://ui/components/hud/timer_hud.gd" id="1_k4fyb"]
+[ext_resource type="FontFile" uid="uid://c2j65ihn71vgj" path="res://assets/fonts/VT323/VT323-Regular.ttf" id="2_gol6d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k4fyb"]
+line_spacing = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_gol6d"]
+line_spacing = 0.0
+
+[node name="TimerHud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_k4fyb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimerText" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_gol6d")
+theme_override_font_sizes/font_size = 20
+text = "TIMER"
+label_settings = SubResource("LabelSettings_k4fyb")
+vertical_alignment = 1
+uppercase = true
+
+[node name="TimerLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_gol6d")
+theme_override_font_sizes/font_size = 16
+text = "12:20"
+label_settings = SubResource("LabelSettings_gol6d")
+vertical_alignment = 1
+uppercase = true
