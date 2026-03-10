@@ -6,10 +6,8 @@ extends Control
 
 var cards: Array = []
 
-const STACK_OFFSET := 40
-const SIDE_OFFSET := -5
+const STACK_OFFSET := 20
 const MAX_EVENTS := 6
-
 
 func _ready():
 	EventManager.event_triggered.connect(_on_event_triggered)
@@ -36,18 +34,17 @@ func _on_event_triggered(event):
 
 
 func reposition_cards():
-
 	for i in range(cards.size()):
-
 		var card = cards[i]
 
+		# Use a negative X value to move the card LEFT from the anchor
+		# Or keep X at 0 if you just want them to stack vertically
 		var target_pos = Vector2(
-			i * SIDE_OFFSET,
+			-card.size.x, # This pulls the card body back onto the screen
 			i * STACK_OFFSET
 		)
 
 		var tween = create_tween()
-
 		tween.tween_property(
 			card,
 			"position",
@@ -57,8 +54,6 @@ func reposition_cards():
 
 
 func _on_card_finished(card):
-
 	if cards.has(card):
 		cards.erase(card)
-
 	reposition_cards()
