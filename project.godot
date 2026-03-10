@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ServerListener="*res://scripts/network/server_listener.gd"
 InputManager="*res://scripts/globals/input_manager.gd"
 EventManager="*res://scripts/globals/event_manager.gd"
+GameManager="*res://scripts/globals/game_manager.gd"
 
 [display]
 

@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4yh0jm787k2f"]
+
+[ext_resource type="Script" uid="uid://5h2ia6l24kqe" path="res://ui/components/end_screens/game_over.gd" id="1_pgxni"]
+[ext_resource type="FontFile" uid="uid://c2j65ihn71vgj" path="res://assets/fonts/VT323/VT323-Regular.ttf" id="2_3h12s"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pgxni")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.247059)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3h12s")
+theme_override_font_sizes/font_size = 40
+text = "VICTORY"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="QuitButton" type="Button" parent="CenterContainer/HBoxContainer2/HBoxContainer"]
+z_index = 4096
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3h12s")
+theme_override_font_sizes/font_size = 20
+action_mode = 0
+text = "QUIT GAME"
+
+[node name="RestartButton" type="Button" parent="CenterContainer/HBoxContainer2/HBoxContainer"]
+z_index = 4096
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3h12s")
+theme_override_font_sizes/font_size = 20
+action_mode = 0
+text = "RESTART GAME"
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer2/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer2/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

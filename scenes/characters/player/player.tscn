@@ -290,7 +290,7 @@ shape = SubResource("CircleShape2D_hss88")
 texture = ExtResource("3_686vu")
 hframes = 13
 vframes = 13
-frame = 6
+frame = 8
 region_enabled = true
 region_rect = Rect2(-13, 0, 832, 845)
 
@@ -311,5 +311,5 @@ script = ExtResource("4_hss88")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("5_qd3e3")
-max_health = 5
+max_health = 1
 metadata/_custom_type_script = "uid://c8diplwnk38nf"

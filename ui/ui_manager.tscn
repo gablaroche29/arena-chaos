@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cphh0bdrcaqew"]
+[gd_scene load_steps=7 format=3 uid="uid://cphh0bdrcaqew"]
 
 [ext_resource type="Script" uid="uid://dk614xmrrl752" path="res://ui/ui_manager.gd" id="1_5tvr0"]
 [ext_resource type="PackedScene" uid="uid://dmd0ydxi27hdk" path="res://ui/components/event_feed.tscn" id="2_i8kce"]
 [ext_resource type="PackedScene" uid="uid://dg5n1mlwvuhiv" path="res://ui/components/vote_panel.tscn" id="3_kc3lm"]
 [ext_resource type="PackedScene" uid="uid://bfuh27pnwyxtr" path="res://ui/components/cursor/cursor.tscn" id="4_kc3lm"]
 [ext_resource type="PackedScene" uid="uid://cqdqcegq8tvpr" path="res://ui/components/hud/hud.tscn" id="5_iquxp"]
+[ext_resource type="PackedScene" uid="uid://b4yh0jm787k2f" path="res://ui/components/end_screens/game_over.tscn" id="6_o5bsg"]
 
 [node name="UiManager" type="CanvasLayer"]
 layer = 128
@@ -25,3 +26,5 @@ grow_vertical = 1
 [node name="Cursor" parent="." instance=ExtResource("4_kc3lm")]
 
 [node name="Hud" parent="." instance=ExtResource("5_iquxp")]
+
+[node name="GameOver" parent="." instance=ExtResource("6_o5bsg")]
