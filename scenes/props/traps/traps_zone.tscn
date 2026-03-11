@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=3 uid="uid://p5dd0318glxq"]
+
+[ext_resource type="Script" uid="uid://bge33oss48k21" path="res://scenes/props/traps/trap_manager.gd" id="1_hwjvw"]
+[ext_resource type="PackedScene" uid="uid://bvsj70je2ydc4" path="res://scenes/props/traps/bear_trap.tscn" id="2_uhp01"]
+[ext_resource type="PackedScene" uid="uid://dbpuo1qslxvk3" path="res://scenes/props/traps/fire_trap.tscn" id="3_rxyty"]
+[ext_resource type="PackedScene" uid="uid://v2p00egpep46" path="res://scenes/props/traps/spike_trap.tscn" id="4_l2obl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18nlu"]
+size = Vector2(224, 144)
+
+[node name="SpawnZone" type="Area2D"]
+script = ExtResource("1_hwjvw")
+trap_scenes = Array[PackedScene]([ExtResource("2_uhp01"), ExtResource("3_rxyty"), ExtResource("4_l2obl")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_18nlu")
