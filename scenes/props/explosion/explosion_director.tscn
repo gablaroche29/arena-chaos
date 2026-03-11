@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://blokp2usbunu5"]
+
+[ext_resource type="Script" uid="uid://dbt4ldxjb3ts1" path="res://scenes/props/explosion/explosion_director.gd" id="1_sg02s"]
+[ext_resource type="PackedScene" uid="uid://vc8b0ltld8i2" path="res://scenes/props/explosion/explosion.tscn" id="2_cpbme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18nlu"]
+size = Vector2(224, 144)
+
+[node name="ExplosionZone" type="Area2D"]
+script = ExtResource("1_sg02s")
+explosion_scene = ExtResource("2_cpbme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_18nlu")

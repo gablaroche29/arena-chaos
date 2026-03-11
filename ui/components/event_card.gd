@@ -10,9 +10,8 @@ var tween: Tween
 # Use a dictionary for cleaner data management
 var event_data = {
 	"SPAWN_ENEMY":  {"color": Color("#EF476F")},
-	"METEOR":       {"color": Color("#F78C6B")},
-	"HEAL_PLAYER":  {"color": Color("#06D6A0")},
-	"FREEZE":       {"color": Color("#4CC9F0")},
+	"EXPLOSION":       {"color": Color("#F78C6B")},
+	"SPAWN_TRAP":       {"color": Color("#4CC9F0")},
 }
 
 func _ready():
@@ -20,6 +19,7 @@ func _ready():
 	# We wait one frame to ensure size is calculated correctly
 	await get_tree().process_frame
 	pivot_offset = Vector2(size.x, 0)
+	
 
 func show_event(event):
 	title.text = event.type.replace("_", " ")
