@@ -3,7 +3,7 @@ extends Node
 signal game_victory
 signal game_over
 
-@export var level_time: float = 10.0 # 3 minutes in seconds
+@export var level_time: float = 180.0 # 3 minutes in seconds
 var timer: Timer
 
 func _ready() -> void:

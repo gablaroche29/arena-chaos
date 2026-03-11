@@ -29,37 +29,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer2" type="VBoxContainer" parent="CenterContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="CenterContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_3h12s")
 theme_override_font_sizes/font_size = 40
-text = "VICTORY"
 horizontal_alignment = 1
 uppercase = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/HBoxContainer2"]
-layout_mode = 2
-alignment = 1
-
-[node name="QuitButton" type="Button" parent="CenterContainer/HBoxContainer2/HBoxContainer"]
-z_index = 4096
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_3h12s")
-theme_override_font_sizes/font_size = 20
-action_mode = 0
-text = "QUIT GAME"
-
-[node name="RestartButton" type="Button" parent="CenterContainer/HBoxContainer2/HBoxContainer"]
-z_index = 4096
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_3h12s")
-theme_override_font_sizes/font_size = 20
-action_mode = 0
-text = "RESTART GAME"
-
-[connection signal="pressed" from="CenterContainer/HBoxContainer2/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer2/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

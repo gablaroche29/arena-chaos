@@ -6,7 +6,7 @@ extends CharacterBody2D
 signal has_attacked()
 signal died()
 
-var speed: int = 50
+var speed: int = randi_range(30, 60)
 var stop_distance: float = 20.0
 var is_attacking: bool = false
 var player: Player

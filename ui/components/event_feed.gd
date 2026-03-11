@@ -7,7 +7,6 @@ extends Control
 var cards: Array = []
 
 const STACK_OFFSET := 20
-const MAX_EVENTS := 6
 
 func _ready():
 	EventManager.event_triggered.connect(_on_event_triggered)
@@ -28,10 +27,6 @@ func _on_event_triggered(event):
 
 	card.finished.connect(_on_card_finished.bind(card))
 
-	# remove oldest if too many
-	if cards.size() > MAX_EVENTS:
-		cards[-1].force_remove()
-
 
 func reposition_cards():
 	for i in range(cards.size()):
@@ -40,7 +35,7 @@ func reposition_cards():
 		# Use a negative X value to move the card LEFT from the anchor
 		# Or keep X at 0 if you just want them to stack vertically
 		var target_pos = Vector2(
-			-card.size.x, # This pulls the card body back onto the screen
+			-104.0, # This pulls the card body back onto the screen
 			i * STACK_OFFSET
 		)
 
