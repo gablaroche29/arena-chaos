@@ -3,24 +3,21 @@
 [ext_resource type="Script" uid="uid://c1qq0qqafqqq1" path="res://ui/components/event_feed.gd" id="1_cgj4j"]
 [ext_resource type="PackedScene" uid="uid://c7fugmg88cq3i" path="res://ui/components/event_card.tscn" id="2_txb1r"]
 
-[node name="EventFeed" type="Control"]
-layout_mode = 3
+[node name="EventFeed" type="MarginContainer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-grow_horizontal = 0
-script = ExtResource("1_cgj4j")
-event_card_scene = ExtResource("2_txb1r")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_direction = 3
-layout_mode = 0
-offset_right = 10.0
+offset_left = -10.0
 offset_bottom = 10.0
+grow_horizontal = 0
+pivot_offset = Vector2(10, 0)
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+script = ExtResource("1_cgj4j")
+event_card_scene = ExtResource("2_txb1r")
 
-[node name="EventContainer" type="Control" parent="MarginContainer"]
+[node name="EventContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 8

@@ -1,54 +1,17 @@
 extends Control
 
-@onready var container = $MarginContainer/EventContainer
-
+@onready var container: VBoxContainer = $EventContainer
 @export var event_card_scene: PackedScene
-
-var cards: Array = []
-
-const STACK_OFFSET := 20
 
 func _ready():
 	EventManager.event_triggered.connect(_on_event_triggered)
 
-
-func _on_event_triggered(event):
-
+func _on_event_triggered(event: Dictionary):
 	var card = event_card_scene.instantiate()
 	container.add_child(card)
-
-	card.position = Vector2.ZERO
-
+	container.move_child(card, 0)
 	card.show_event(event)
-
-	cards.insert(0, card)
-
-	reposition_cards()
-
 	card.finished.connect(_on_card_finished.bind(card))
 
-
-func reposition_cards():
-	for i in range(cards.size()):
-		var card = cards[i]
-
-		# Use a negative X value to move the card LEFT from the anchor
-		# Or keep X at 0 if you just want them to stack vertically
-		var target_pos = Vector2(
-			-104.0, # This pulls the card body back onto the screen
-			i * STACK_OFFSET
-		)
-
-		var tween = create_tween()
-		tween.tween_property(
-			card,
-			"position",
-			target_pos,
-			0.25
-		).set_trans(Tween.TRANS_CUBIC)
-
-
 func _on_card_finished(card):
-	if cards.has(card):
-		cards.erase(card)
-	reposition_cards()
+	card.queue_free()
