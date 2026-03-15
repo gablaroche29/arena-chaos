@@ -18,6 +18,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if is_attacking or health.dead:
+		velocity = Vector2.ZERO
 		return
 	
 	var to_player = player.global_position - global_position
@@ -52,8 +53,6 @@ func _has_attacked() -> void:
 
 func _has_finished_attacking():
 	if player_in_zone and not health.dead:
-		var to_player = player.global_position - global_position
-		velocity = to_player.normalized()
 		has_attacked.emit()
 	else:
 		is_attacking = false
